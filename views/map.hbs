@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner - Explore India</title>
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Travel Planner</h1>
+        </div>
+        <nav>
+            <a href="/index">Home</a>
+            <a href="/destination">Destinations</a>
+            <a href="/map">Map</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/login_signup">Login</a>
+        </nav>
+    </header>
+
+    <section class="map-section">
+        <div class="map-container">
+            <!-- SVG Map of India or an Image Map -->
+            <img src="images/india_map.svg" alt="India Map" id="india-map">
+        </div>
+
+        <!-- Tooltip box for displaying tourist information -->
+        <div id="info-box" class="info-box">
+            <h3 id="state-name"></h3>
+            <p id="tourist-summary"></p>
+            <img id="tourist-image" src="" alt="Place Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Travel Planner</p>
+    </footer>
+
+    <script src="js/map.js"></script>
+</body>
+</html>

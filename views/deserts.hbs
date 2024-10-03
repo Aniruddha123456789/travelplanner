@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deserts</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .place {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .place img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .place-info {
+            margin-top: 15px;
+        }
+        .place h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .place p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .tourist-data {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .book-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .modal-content a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .book-flight {
+            background-color: #007bff;
+        }
+        .book-train {
+            background-color: #ff5722;
+        }
+        .book-bus {
+            background-color: #ffc107;
+        }
+        .book-hotel {
+            background-color: #17a2b8;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Emoji styles */
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Thar Desert -->
+        <div class="place">
+            <img src="/images/thar.jpg" alt="Thar Desert">
+            <div class="place-info">
+                <h2>Thar Desert</h2>
+                <p>The Thar Desert, also known as the Great Indian Desert, is a large arid region that offers camel safaris and beautiful sand dunes.</p>
+                <p class="tourist-data">Number of tourists visited: 2 million annually</p>
+                <button class="book-btn" onclick="openModal('tharModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Thar Desert -->
+        <div id="tharModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('tharModal')">&times;</span>
+                <h3>Book Your Travel to Thar Desert</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Kimsar -->
+        <div class="place">
+            <img src="/images/kimsar.jpg" alt="Kimsar">
+            <div class="place-info">
+                <h2>Kimsar</h2>
+                <p>Kimsar is a small village in Rajasthan, offering desert safaris and a quiet experience of the Thar Desert.</p>
+                <p class="tourist-data">Number of tourists visited: 500,000 annually</p>
+                <button class="book-btn" onclick="openModal('kimsarModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Kimsar -->
+        <div id="kimsarModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('kimsarModal')">&times;</span>
+                <h3>Book Your Travel to Kimsar</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Kutch Desert -->
+        <div class="place">
+            <img src="/images/kutch.jpg" alt="Kutch Desert">
+            <div class="place-info">
+                <h2>Kutch Desert</h2>
+                <p>The Rann of Kutch is a vast salt marsh in the Thar Desert, known for its white desert and the annual Rann Utsav festival.</p>
+                <p class="tourist-data">Number of tourists visited: 1 million annually</p>
+                <button class="book-btn" onclick="openModal('kutchModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Kutch Desert -->
+        <div id="kutchModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('kutchModal')">&times;</span>
+                <h3>Book Your Travel to Kutch Desert</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Ajmer -->
+        <div class="place">
+            <img src="/images/ajmer.jpg" alt="Ajmer">
+            <div class="place-info">
+                <h2>Ajmer</h2>
+                <p>Ajmer, surrounded by the Aravalli Mountains, is known for its historic Dargah Sharif and desert landscapes.</p>
+                <p class="tourist-data">Number of tourists visited: 3 million annually</p>
+                <button class="book-btn" onclick="openModal('ajmerModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Ajmer -->
+        <div id="ajmerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ajmerModal')">&times;</span>
+                <h3>Book Your Travel to Ajmer</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

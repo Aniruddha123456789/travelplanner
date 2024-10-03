@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header Styling */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+header nav {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00509E;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #002244;
+    transform: scale(1.05);
+}
+
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 60px;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery h2:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #00509E;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 25px;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+    transition: background 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #003366;
+    color: white;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

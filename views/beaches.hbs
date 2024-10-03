@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaches</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .place {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .place img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .place-info {
+            margin-top: 15px;
+        }
+        .place h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .place p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .tourist-data {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .book-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .modal-content a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .book-flight {
+            background-color: #007bff;
+        }
+        .book-train {
+            background-color: #ff5722;
+        }
+        .book-bus {
+            background-color: #ffc107;
+        }
+        .book-hotel {
+            background-color: #17a2b8;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Emoji styles */
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Gallery Link -->
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Baga Beach -->
+        <div class="place">
+            <img src="/images/bagabeach.jpg" alt="Baga Beach">
+            <div class="place-info">
+                <h2>Baga Beach</h2>
+                <p>Baga Beach, located in North Goa, is famous for its vibrant nightlife and water sports. It’s a perfect destination for beach lovers and adventure seekers.</p>
+                <p class="tourist-data">Number of tourists visited: 2.5 million annually</p>
+                <button class="book-btn" onclick="openModal('bagaBeachModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Baga Beach -->
+        <div id="bagaBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bagaBeachModal')">&times;</span>
+                <h3>Book Your Travel to Baga Beach</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Palolem Beach -->
+        <div class="place">
+            <img src="/images/palolembeach.jpg" alt="Palolem Beach">
+            <div class="place-info">
+                <h2>Palolem Beach</h2>
+                <p>Palolem Beach, located in South Goa, is known for its natural beauty and calm waters. It offers peaceful surroundings and stunning views of the sunset.</p>
+                <p class="tourist-data">Number of tourists visited: 1 million annually</p>
+                <button class="book-btn" onclick="openModal('palolemBeachModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Palolem Beach -->
+        <div id="palolemBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('palolemBeachModal')">&times;</span>
+                <h3>Book Your Travel to Palolem Beach</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Kovalam Beach -->
+        <div class="place">
+            <img src="/images/kovalambeach.jpg" alt="Kovalam Beach">
+            <div class="place-info">
+                <h2>Kovalam Beach</h2>
+                <p>Kovalam Beach, located in Kerala, is famous for its crescent-shaped coastline and lighthouse. It's a haven for surfers and beachgoers.</p>
+                <p class="tourist-data">Number of tourists visited: 2 million annually</p>
+                <button class="book-btn" onclick="openModal('kovalamBeachModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Kovalam Beach -->
+        <div id="kovalamBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('kovalamBeachModal')">&times;</span>
+                <h3>Book Your Travel to Kovalam Beach</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Varkala Beach -->
+        <div class="place">
+            <img src="/images/varkalabeach.jpg" alt="Varkala Beach">
+            <div class="place-info">
+                <h2>Varkala Beach</h2>
+                <p>Varkala Beach, situated in Kerala, is known for its cliffside views and therapeutic waters. It’s a great destination for relaxing and unwinding.</p>
+                <p class="tourist-data">Number of tourists visited: 1.5 million annually</p>
+                <button class="book-btn" onclick="openModal('varkalaBeachModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Varkala Beach -->
+        <div id="varkalaBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('varkalaBeachModal')">&times;</span>
+                <h3>Book Your Travel to Varkala Beach</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

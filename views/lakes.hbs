@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakes</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .place {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .place img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .place-info {
+            margin-top: 15px;
+        }
+        .place h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .place p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .tourist-data {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .book-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .modal-content a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .book-flight {
+            background-color: #007bff;
+        }
+        .book-train {
+            background-color: #ff5722;
+        }
+        .book-bus {
+            background-color: #ffc107;
+        }
+        .book-hotel {
+            background-color: #17a2b8;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Emoji styles */
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Dal Lake -->
+        <div class="place">
+            <img src="/images/dal_lake.jpg" alt="Dal Lake">
+            <div class="place-info">
+                <h2>Dal Lake</h2>
+                <p>Dal Lake is known as the "Jewel in the crown of Kashmir," famous for its houseboats and shikara rides.</p>
+                <p class="tourist-data">Number of tourists visited: 1 million annually</p>
+                <button class="book-btn" onclick="openModal('dalModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Dal Lake -->
+        <div id="dalModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('dalModal')">&times;</span>
+                <h3>Book Your Travel to Dal Lake</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Chilika Lake -->
+        <div class="place">
+            <img src="/images/chilika_lake.jpg" alt="Chilika Lake">
+            <div class="place-info">
+                <h2>Chilika Lake</h2>
+                <p>Chilika Lake is the largest coastal lagoon in India, home to diverse bird species and a popular spot for bird-watching.</p>
+                <p class="tourist-data">Number of tourists visited: 2 million annually</p>
+                <button class="book-btn" onclick="openModal('chilikaModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Chilika Lake -->
+        <div id="chilikaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('chilikaModal')">&times;</span>
+                <h3>Book Your Travel to Chilika Lake</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Loktak Lake -->
+        <div class="place">
+            <img src="/images/loktak_lake.jpg" alt="Loktak Lake">
+            <div class="place-info">
+                <h2>Loktak Lake</h2>
+                <p>Loktak Lake in Manipur is famous for its phumdis, or floating islands, and is an important source of livelihood for locals.</p>
+                <p class="tourist-data">Number of tourists visited: 1 million annually</p>
+                <button class="book-btn" onclick="openModal('loktakModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Loktak Lake -->
+        <div id="loktakModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('loktakModal')">&times;</span>
+                <h3>Book Your Travel to Loktak Lake</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Wular Lake -->
+        <div class="place">
+            <img src="/images/wular_lake.jpg" alt="Wular Lake">
+            <div class="place-info">
+                <h2>Wular Lake</h2>
+                <p>Wular Lake, one of the largest freshwater lakes in Asia, is located in Jammu and Kashmir and is known for its scenic beauty and fishing spots.</p>
+                <p class="tourist-data">Number of tourists visited: 500,000 annually</p>
+                <button class="book-btn" onclick="openModal('wularModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Wular Lake -->
+        <div id="wularModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('wularModal')">&times;</span>
+                <h3>Book Your Travel to Wular Lake</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

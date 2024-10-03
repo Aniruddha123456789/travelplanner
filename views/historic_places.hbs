@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Places</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Place Card Styling */
+.place {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.place:hover {
+    transform: scale(1.02);
+}
+
+.place img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.place-info {
+    margin-top: 20px;
+}
+
+.place h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.place p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.tourist-data {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Book Button Styling */
+.book-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-content a {
+    display: block;
+    margin: 12px 0;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    transition: transform 0.2s ease;
+}
+
+.modal-content a:hover {
+    transform: scale(1.05);
+}
+
+.book-flight {
+    background-color: #007bff;
+}
+
+.book-train {
+    background-color: #ff5722;
+}
+
+.book-bus {
+    background-color: #ffc107;
+}
+
+.book-hotel {
+    background-color: #17a2b8;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Gallery Link -->
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Taj Mahal -->
+        <div class="place">
+            <img src="/images/tajmahal.jpg" alt="Taj Mahal">
+            <div class="place-info">
+                <h2>Taj Mahal</h2>
+                <p>The Taj Mahal, located in Agra, India, is one of the most iconic structures in the world. Built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal, it is renowned for its stunning architecture and intricate marble work.</p>
+                <p class="tourist-data">Number of tourists visited: 6-8 million annually</p>
+                <button class="book-btn" onclick="openModal('tajMahalModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Taj Mahal -->
+        <div id="tajMahalModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('tajMahalModal')">&times;</span>
+                <h3>Book Your Travel to Taj Mahal</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Repeat for other places... -->
+
+        <!-- Red Fort -->
+        <div class="place">
+            <img src="/images/redfort.jpg" alt="Red Fort">
+            <div class="place-info">
+                <h2>Red Fort</h2>
+                <p>The Red Fort in Delhi is a historic fort and a symbol of India's independence. It served as the main residence of Mughal emperors for over 200 years.</p>
+                <p class="tourist-data">Number of tourists visited: 3 million annually</p>
+                <button class="book-btn" onclick="openModal('redFortModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Red Fort -->
+        <div id="redFortModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('redFortModal')">&times;</span>
+                <h3>Book Your Travel to Red Fort</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+   <!-- Qutub Minar -->
+        <div class="place">
+            <img src="/images/qutubminar.jpg" alt="Qutub Minar">
+            <div class="place-info">
+                <h2>Qutub Minar</h2>
+                <p>The Qutub Minar is a minaret in Delhi and is one of the most famous historical monuments in India. It is a UNESCO World Heritage Site and stands at a height of 73 meters.</p>
+                <p class="tourist-data">Number of tourists visited: 3.9 million annually</p>
+                <button class="book-btn" onclick="openModal('qutubMinarModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Qutub Minar -->
+        <div id="qutubMinarModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('qutubMinarModal')">&times;</span>
+                <h3>Book Your Travel to Qutub Minar</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Gateway of India -->
+        <div class="place">
+            <img src="/images/gatewayofindia.jpg" alt="Gateway of India">
+            <div class="place-info">
+                <h2>Gateway of India</h2>
+                <p>The Gateway of India is an arch monument built in the early 20th century in Mumbai. It is one of the city's most famous landmarks and a popular tourist destination.</p>
+                <p class="tourist-data">Number of tourists visited: 4.5 million annually</p>
+                <button class="book-btn" onclick="openModal('gatewayOfIndiaModal')">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Modal for Gateway of India -->
+        <div id="gatewayOfIndiaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('gatewayOfIndiaModal')">&times;</span>
+                <h3>Book Your Travel to Gateway of India</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+    </div>
+
+        
+
+    </div>
+
+    <script>
+        // Open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

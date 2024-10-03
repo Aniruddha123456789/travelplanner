@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islands</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Place Card Styling */
+.place {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.place:hover {
+    transform: scale(1.02);
+}
+
+.place img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.place-info {
+    margin-top: 20px;
+}
+
+.place h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.place p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.tourist-data {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Book Button Styling */
+.book-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-content a {
+    display: block;
+    margin: 12px 0;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    transition: transform 0.2s ease;
+}
+
+.modal-content a:hover {
+    transform: scale(1.05);
+}
+
+.book-flight {
+    background-color: #007bff;
+}
+
+.book-train {
+    background-color: #ff5722;
+}
+
+.book-bus {
+    background-color: #ffc107;
+}
+
+.book-hotel {
+    background-color: #17a2b8;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Lakshadweep -->
+        <div class="place">
+            <img src="/images/lakshadweep.jpg" alt="Lakshadweep">
+            <div class="place-info">
+                <h2>Lakshadweep</h2>
+                <p>Lakshadweep is an archipelago of tropical islands known for its coral reefs, clear blue waters, and marine life.</p>
+                <p class="tourist-data">Number of tourists visited: 50,000 annually</p>
+                <button class="book-btn" onclick="openModal('lakshadweepModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Lakshadweep -->
+        <div id="lakshadweepModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('lakshadweepModal')">&times;</span>
+                <h3>Book Your Travel to Lakshadweep</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Neil Island -->
+        <div class="place">
+            <img src="/images/neil_island.jpg" alt="Neil Island">
+            <div class="place-info">
+                <h2>Neil Island</h2>
+                <p>Neil Island is part of the Andaman Islands, famous for its beaches, coral reefs, and laid-back atmosphere.</p>
+                <p class="tourist-data">Number of tourists visited: 200,000 annually</p>
+                <button class="book-btn" onclick="openModal('neilModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Neil Island -->
+        <div id="neilModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('neilModal')">&times;</span>
+                <h3>Book Your Travel to Neil Island</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Barren Island -->
+        <div class="place">
+            <img src="/images/barren_island.jpg" alt="Barren Island">
+            <div class="place-info">
+                <h2>Barren Island</h2>
+                <p>Barren Island is India's only active volcano, located in the Andaman Sea.</p>
+                <p class="tourist-data">Number of tourists visited: Limited permits for tourists</p>
+                <button class="book-btn" onclick="openModal('barrenModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Barren Island -->
+        <div id="barrenModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('barrenModal')">&times;</span>
+                <h3>Book Your Travel to Barren Island</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Majuli Island -->
+        <div class="place">
+            <img src="/images/majuli_island.jpg" alt="Majuli Island">
+            <div class="place-info">
+                <h2>Majuli Island</h2>
+                <p>Majuli is the world's largest river island, located on the Brahmaputra River in Assam.</p>
+                <p class="tourist-data">Number of tourists visited: 600,000 annually</p>
+                <button class="book-btn" onclick="openModal('majuliModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Majuli Island -->
+        <div id="majuliModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('majuliModal')">&times;</span>
+                <h3>Book Your Travel to Majuli Island</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

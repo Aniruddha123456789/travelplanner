@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventures</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .place {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .place img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .place-info {
+            margin-top: 15px;
+        }
+        .place h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .place p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .tourist-data {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .book-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .modal-content a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .book-flight {
+            background-color: #007bff;
+        }
+        .book-train {
+            background-color: #ff5722;
+        }
+        .book-bus {
+            background-color: #ffc107;
+        }
+        .book-hotel {
+            background-color: #17a2b8;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Emoji styles */
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/gallery" class="back-link">← Back to Gallery</a>
+
+        <!-- Coorg -->
+        <div class="place">
+            <img src="/images/coorg.jpg" alt="Coorg">
+            <div class="place-info">
+                <h2>Coorg</h2>
+                <p>Coorg is a popular adventure destination for trekking, river rafting, and exploring coffee plantations.</p>
+                <p class="tourist-data">Number of tourists visited: 2 million annually</p>
+                <button class="book-btn" onclick="openModal('coorgModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Coorg -->
+        <div id="coorgModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('coorgModal')">&times;</span>
+                <h3>Book Your Travel to Coorg</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Ladakh -->
+        <div class="place">
+            <img src="/images/ladakh.jpg" alt="Ladakh">
+            <div class="place-info">
+                <h2>Ladakh</h2>
+                <p>Ladakh, the land of high passes, offers a surreal experience for adventure lovers, with trekking, mountain biking, and scenic landscapes.</p>
+                <p class="tourist-data">Number of tourists visited: 1.2 million annually</p>
+                <button class="book-btn" onclick="openModal('ladakhModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Ladakh -->
+        <div id="ladakhModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ladakhModal')">&times;</span>
+                <h3>Book Your Travel to Ladakh</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Bir (Himachal Pradesh) -->
+        <div class="place">
+            <img src="/images/bir.jpg" alt="Bir">
+            <div class="place-info">
+                <h2>Bir (Himachal Pradesh)</h2>
+                <p>Bir is known as the paragliding capital of India and attracts adventure enthusiasts from around the world.</p>
+                <p class="tourist-data">Number of tourists visited: 500,000 annually</p>
+                <button class="book-btn" onclick="openModal('birModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Bir -->
+        <div id="birModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('birModal')">&times;</span>
+                <h3>Book Your Travel to Bir</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+
+        <!-- Spiti Valley -->
+        <div class="place">
+            <img src="/images/spiti.jpg" alt="Spiti Valley">
+            <div class="place-info">
+                <h2>Spiti Valley</h2>
+                <p>Spiti Valley, known as Little Tibet, is famous for its rugged terrain and remote monasteries.</p>
+                <p class="tourist-data">Number of tourists visited: 1 million annually</p>
+                <button class="book-btn" onclick="openModal('spitiModal')">Book Now</button>
+            </div>
+        </div>
+        <!-- Modal for Spiti -->
+        <div id="spitiModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('spitiModal')">&times;</span>
+                <h3>Book Your Travel to Spiti Valley</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
