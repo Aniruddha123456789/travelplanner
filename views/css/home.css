@@ -5,18 +5,56 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header Styling */
 header {
     background-color: #003366;
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
     margin-left: 20px;
-    animation: slideInLeft 1s ease-out;
+    font-size: 24px;
+}
+
+header .search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+header .search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+header .search-bar input:focus {
+    box-shadow: 0 0 10px rgba(0, 80, 158, 0.5);
+}
+
+header .search-bar button {
+    padding: 10px 20px;
+    background-color: #00509E;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header .search-bar button:hover {
+    background-color: #003366;
+    transform: scale(1.1);
 }
 
 header nav {
@@ -25,25 +63,27 @@ header nav {
 
 header nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
-    padding: 5px 15px;
+    padding: 10px 20px;
     background-color: #00509E;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 header nav a:hover {
-    background-color: #003366;
-    transform: scale(1.1);
+    background-color: #002244;
+    transform: scale(1.05);
 }
 
+/* Hero Section */
 .hero {
+    display: block;
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
-    color: white;
+    
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -54,37 +94,7 @@ header nav a:hover {
 .hero h2 {
     font-size: 3em;
     animation: fadeInDown 1s ease-out;
-}
-
-.search-bar {
-    margin-top: 20px;
-}
-
-.search-bar input {
-    padding: 10px;
-    width: 300px;
-    border-radius: 5px;
-    border: none;
-    transition: box-shadow 0.3s ease;
-}
-
-.search-bar input:focus {
-    box-shadow: 0 0 10px rgba(0, 80, 158, 0.5);
-}
-
-.search-bar button {
-    padding: 10px;
-    background-color: #00509E;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.search-bar button:hover {
-    background-color: #003366;
-    transform: scale(1.1);
 }
 
 .featured-destinations {
@@ -174,17 +184,6 @@ footer {
     }
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @keyframes zoomIn {
     from {
         transform: scale(0.9);
@@ -194,4 +193,316 @@ footer {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+
+
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+header .search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+header .search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+header .search-bar input:focus {
+    box-shadow: 0 0 10px rgba(0, 80, 158, 0.5);
+}
+
+header .search-bar button {
+    padding: 10px 20px;
+    background-color: #00509E;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header .search-bar button:hover {
+    background-color: #003366;
+    transform: scale(1.1);
+}
+
+header nav {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00509E;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #002244;
+    transform: scale(1.05);
+}
+
+/* Section styling */
+section h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2em;
+    color: #4a148c;
+}
+
+.search-bar {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #8e24aa;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #6a1b9a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #4a148c;
+}
+
+/* Results section */
+.results {
+    margin: 50px auto;
+    width: 80%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.results h2 {
+    margin-bottom: 20px;
+    color: #4a148c;
+}
+
+#weather, #images {
+    margin-top: 20px;
+}
+
+#photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#photoGallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Add zoom effect on hover */
+}
+
+#photoGallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Tourist information section */
+#touristInfo {
+    margin-top: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Travel packages section */
+#travelPackages {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#travelPackages h3 {
+    color: #4a148c;
+    margin-bottom: 10px;
+}
+
+.package {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+.package:hover {
+    background-color: #e0e0e0;
+}
+
+.package p {
+    margin: 5px 0;
+}
+
+/* Booking section styling */
+.booking {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    position: absolute;
+    right: 20px;
+    top: 150px;
+}
+
+.booking h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.booking label {
+    font-size: 16px;
+    color: #555;
+    margin-right: 10px;
+}
+
+.booking input[type="date"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.booking input[type="date"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+.booking button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    width: 100%;
+}
+
+.booking button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.booking #availabilityResult {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 390px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for footer */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .booking {
+        position: relative;
+        max-width: 100%;
+        right: auto;
+        margin: 20px 0;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .results {
+        width: 100%;
+    }
+
+    #photoGallery img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+}
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
 }
