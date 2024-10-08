@@ -18,17 +18,20 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>Travel Planner</h1>
-        </div>
-        <nav>
-            <a href="/index">Home</a>
-            <a href="/destination">Destinations</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/contact">Contact Us</a>
-            <a href="/login_signup">Login</a>
-        </nav>
-    </header>
+    <div class="logo">
+        <h1>Travel Planner</h1>
+    </div>
+
+
+    <nav>
+        <a href="/index">Home</a>
+        <a href="/destination">Destinations</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Feedback</a>
+        <a href="/login_signup">Login</a>
+    </nav>
+</header>
+
 
     <section class="destination-search">
         <h2>Explore Destinations</h2>
@@ -59,13 +62,35 @@
         <div id="map"></div> <!-- Leaflet map container -->
         
         
+                <button class="book-btn" onclick="openModal('palolemBeachModal')">Book Now</button>
+        <div id="palolemBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('palolemBeachModal')">&times;</span>
+                <h3>Book Your Travel</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span>
+                    Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book
+                    Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book
+                    Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span>
+                    Book Hotel</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Travel Planner</p>
     </footer>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
 
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
     <!-- Leaflet JS for the map -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
