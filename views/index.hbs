@@ -11,10 +11,7 @@
     <div class="logo">
         <h1>Travel Planner</h1>
     </div>
-   {{!-- <form class="search-bar" action="/search" method="GET">
-    <input type="text" placeholder="Search destinations..." name="query" required>
-    <button type="submit">Search</button>
-</form> --}}
+
     <section class="destination-search">
         
         <form id="destinationSearchForm" class="search-bar">
@@ -54,7 +51,7 @@
 
 
     <!-- Destination Results Section -->
-    <section id="destinationResults" class="results" style="display:none;">
+    <section id="destinationResults" class="results" style="display:none; ">
         <h2 id="destinationName"></h2>
         <div id="weather">
             <h3>Weather:</h3>
@@ -74,7 +71,17 @@
 
         
         
-        
+        <button class="book-btn" onclick="openModal('palolemBeachModal')">Book Now</button>
+        <div id="palolemBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('palolemBeachModal')">&times;</span>
+                <h3>Book Your Travel</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
        
     </section>
 
@@ -85,6 +92,16 @@
     <!-- Optional: Include JavaScript for Enhanced Search Functionality -->
    
     <!-- Optional: Include JavaScript for Enhanced Search Functionality -->
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
         document.getElementById('destinationSearchForm').addEventListener('submit', async function(event) {
