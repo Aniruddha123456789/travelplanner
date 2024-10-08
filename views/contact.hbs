@@ -7,25 +7,33 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Travel Planner</h1>
-        </div>
-        <nav>
-            <a href="/index">Home</a>
-            <a href="/destination">Destinations</a>
-            
-            <a href="/gallery">Gallery</a>
-            <a href="/contact">Contact Us</a>
-            <a href="/login_signup">Login</a>
-        </nav>
-    </header>
+   <header>
+    <div class="logo">
+        <h1>Travel Planner</h1>
+    </div>
+    <section class="destination-search">
+        
+        <form id="destinationSearchForm" class="search-bar">
+            <input type="text" id="searchInput" placeholder="Enter a destination..." required>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+</form>
+
+    <nav>
+        <a href="/index">Home</a>
+        <a href="/destination">Destinations</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Feedback</a>
+        <a href="/login_signup">Login</a>
+    </nav>
+</header>
 
     <section class="contact">
-        <h2>Contact Us</h2>
+        <h2>Feedback</h2>
         <div class="contact-info">
             <p><strong>Email:</strong> info@travelplanner.com</p>
-            <p><strong>Phone:</strong>8169367678</p>
+            <p><strong>Phone:</strong>8169368688</p>
             <p><strong>Address:</strong> Block A , Imperial Heights, Goregaon (w)</p>
         </div>
         <form class="contact-form">
@@ -36,8 +44,195 @@
         </form>
     </section>
 
+    
+    <!-- Destination Results Section -->
+    <section id="destinationResults" class="results" style="display:none; ">
+        <h2 id="destinationName"></h2>
+        <div id="weather">
+            <h3>Weather:</h3>
+            <p id="temperature"></p>
+            <p id="weatherDescription"></p>
+        </div>
+
+        <div id="images">
+            <h3>Pictures:</h3>
+            <div id="photoGallery"></div>
+        </div>
+
+        <div id="touristInfo">
+            <h3>Tourist Information:</h3>
+            <p id="touristSummary"></p>
+        </div>
+
+        
+        
+        <button class="book-btn" onclick="openModal('palolemBeachModal')">Book Now</button>
+        <div id="palolemBeachModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('palolemBeachModal')">&times;</span>
+                <h3>Book Your Travel</h3>
+                <a href="https://www.goindigo.in/" target="_blank" class="book-flight"><span class="emoji">✈️</span> Book Flight</a>
+                <a href="https://www.irctc.co.in/" target="_blank" class="book-train"><span class="emoji">🚆</span> Book Train</a>
+                <a href="https://www.redbus.in/" target="_blank" class="book-bus"><span class="emoji">🚌</span> Book Bus</a>
+                <a href="https://www.oyorooms.com/" target="_blank" class="book-hotel"><span class="emoji">🏨</span> Book Hotel</a>
+            </div>
+        </div>
+       
+    </section>
+
     <footer>
         <p>© 2024 Travel Planner</p>
     </footer>
+
+
+
+
+    
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        document.getElementById('destinationSearchForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const searchQuery = document.getElementById('searchInput').value;
+
+            if (searchQuery) {
+                try {
+                    // Fetch Weather Data
+                    await fetchWeatherData(searchQuery);
+        
+                    // Fetch Images
+                    await fetchImages(searchQuery);
+
+                    // Fetch Tourist Information
+                    await fetchTouristInfo(searchQuery);
+
+                    // Show map for the destination
+                    await showMap(searchQuery);
+
+                    // Fetch Travel Packages (if applicable)
+                    await fetchTravelPackages(searchQuery);
+
+                                // Hide the hero and featured-destinations sections
+            document.querySelector('.contact').style.display = 'none';
+            
+
+                    document.getElementById('destinationResults').style.display = 'block'; // Show results section
+                    
+                } catch (err) {
+                    console.error("Error occurred during fetch operations:", err);
+                }
+            }
+        });
+
+        async function showMap(query) {
+            const geocodingUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`;
+
+            try {
+                const response = await fetch(geocodingUrl);
+                const data = await response.json();
+
+                if (data.length > 0) {
+                    const lat = data[0].lat;
+                    const lon = data[0].lon;
+
+                    // Initialize the map
+                    const map = L.map('map').setView([lat, lon], 13);
+
+                    // Add the OpenStreetMap tiles
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    // Add a marker for the searched place
+                    L.marker([lat, lon]).addTo(map)
+                        .bindPopup(`<b>${query}</b>`)
+                        .openPopup();
+
+                } else {
+                    console.error('No map data found for the query:', query);
+                }
+            } catch (error) {
+                console.error('Error fetching map data:', error);
+            }
+        }
+
+        async function fetchWeatherData(query) {
+            const apiKey = 'af6791d3a83a8df02473b58ca4c3db5d'; // OpenWeatherMap API Key
+            const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${apiKey}`;
+
+            try {
+                const response = await fetch(weatherURL);
+                const data = await response.json();
+
+                if (data.main && data.weather) {
+                    // Show the weather results
+                    document.getElementById('destinationName').textContent = `Weather in ${query}`;
+                    document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
+                    document.getElementById('weatherDescription').textContent = `Condition: ${data.weather[0].description}`;
+                } else {
+                    console.error("Invalid weather data:", data);
+                }
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        async function fetchImages(query) {
+            const unsplashAccessKey = 'z7OrVauyHvZh5Eho3piKPUle1J3wtmti76X4qJlzL7I'; // Unsplash API Key
+            const unsplashURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${unsplashAccessKey}`;
+
+            try {
+                const response = await fetch(unsplashURL);
+                const data = await response.json();
+
+                const photoGallery = document.getElementById('photoGallery');
+                photoGallery.innerHTML = ''; // Clear existing images
+
+                if (data.results && data.results.length > 0) {
+                    data.results.forEach(photo => {
+                        const img = document.createElement('img');
+                        img.src = photo.urls.small;
+                        img.alt = photo.alt_description;
+                        img.style.width = '200px';
+                        photoGallery.appendChild(img);
+                    });
+                } else {
+                    console.warn('No images found for the query:', query);
+                }
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        }
+
+        async function fetchTouristInfo(query) {
+            const wikiURL = `https://en.wikipedia.org/api/rest_v1/page/summary/${query}`;
+
+            try {
+                const response = await fetch(wikiURL);
+                const data = await response.json();
+
+                if (data.extract) {
+                    document.getElementById('touristSummary').textContent = data.extract;
+                } else {
+                    document.getElementById('touristSummary').textContent = 'No tourist information available.';
+                }
+            } catch (error) {
+                console.error('Error fetching tourist information:', error);
+            }
+        }
+
+        async function fetchTravelPackages(query) {
+            // Add your travel packages fetching logic here if needed
+        }
+    </script>
+
 </body>
 </html>
